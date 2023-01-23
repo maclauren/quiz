@@ -81,7 +81,7 @@ function selectAnswer(event) {
       presentQuestion();
     }
   }
-  
+
 // WHEN the game is over
 // endQuiz function, clear the timer, hide questions and show end-screen, show final score value
 function endQuiz() {
@@ -93,6 +93,15 @@ function endQuiz() {
 
 // displayFeedback function
 // select feedback element, remove hide, set timeout to 1 second and add hide again
+// correct to 1000 milliseconds
+  function displayFeedback(feedback) {
+    let feedbackEl = document.querySelector("#feedback");
+    feedbackEl.textContent = feedback;
+    feedbackEl.classList.remove("hide");
+    setTimeout(() => {
+      feedbackEl.classList.add("hide");
+    }, 1000);
+  }
 
 // THEN I can save my initials and score
 // add save function, create initials variable from html, create highscores variable (will need to use localstorage and parse JSON data)
