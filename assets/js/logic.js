@@ -59,7 +59,29 @@ function presentQuestion() {
 // selectAnswer function
 // set answer/choice event parameter, set user choice to the userChoice text, set correct answer to value in the current question, add function to check the answer is correct, add text/string to let user know they are 'correct', then increment score by 10 and increment current question, do the same for incorrect but reduce time by 10secs
 // correction to set score variable to 0
-
+let currentScore = 0;
+function selectAnswer(event) {
+    let userChoice = event.target.textContent;
+    let correctAnswer = questions[currentQuestion].answer;
+    if (userChoice === correctAnswer) {
+      displayFeedback("Correct!");
+      currentScore += 10;
+      currentQuestion++
+// WHEN I answer a question incorrectly
+    } else {
+      displayFeedback("Incorrect!");
+// THEN time is subtracted from the clock
+      timeRemaining -= 10;
+    }
+// WHEN all the questions are answered (or the timer reaches 0, written at line 21 in the timer function)
+// THEN the game is over
+    if (currentQuestion === questions.length) {
+      endQuiz();
+    } else {
+      presentQuestion();
+    }
+  }
+  
 // WHEN I answer a question incorrectly
 
 // THEN time is subtracted from the clock
