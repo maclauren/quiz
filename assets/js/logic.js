@@ -4,6 +4,8 @@
 // create var for start button
 // set up event listener for start button
 // when button is pressed, start the quiz
+var startBtn = document.querySelector("#start");
+startBtn.addEventListener("click", startQuiz);
 
 // THEN a timer starts and I am presented with a question
 // declare let for timer (60 secs), current question (set 0 for question 1) and interval (undefined for now)
