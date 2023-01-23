@@ -38,10 +38,23 @@ function startQuiz() {
     startTimer();
     presentQuestion();
   }
-  
+
 // WHEN I answer a question
 // THEN I am presented with another question
 // get questions list and display value of current question. use a loop to get choices. display text and add buttons, with event listeners for clicks. finally, append new elements so user can click/select answer with new button elements
+function presentQuestion() {
+    let question = questionsList[currentQuestion];
+    document.querySelector("#question-title").textContent = question.title;
+    let choices = document.querySelector("#choices");
+    choices.innerHTML = "";
+    for (let i = 0; i < question.choices.length; i++) {
+        let choice = question.choices[i];
+        let button = document.createElement("button");
+        button.textContent = choice;
+        button.addEventListener("click", selectAnswer);
+        choices.appendChild(button);
+    }
+}
 
 // selectAnswer function
 // set answer/choice event parameter, set user choice to the userChoice text, set correct answer to value in the current question, add function to check the answer is correct, add text/string to let user know they are 'correct', then increment score by 10 and increment current question, do the same for incorrect but reduce time by 10secs
