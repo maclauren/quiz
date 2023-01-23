@@ -82,15 +82,14 @@ function selectAnswer(event) {
     }
   }
   
-// WHEN I answer a question incorrectly
-
-// THEN time is subtracted from the clock
-
-// WHEN all the questions are answered (or the timer reaches 0, written at line 21 in the timer function)
-// THEN the game is over
-
 // WHEN the game is over
 // endQuiz function, clear the timer, hide questions and show end-screen, show final score value
+function endQuiz() {
+    clearInterval(timerInterval);
+    document.getElementById("questions").classList.add("hide");
+    document.getElementById("end-screen").classList.remove("hide");
+    document.querySelector("#final-score").textContent = currentScore;
+  }
 
 // displayFeedback function
 // select feedback element, remove hide, set timeout to 1 second and add hide again
