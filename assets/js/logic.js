@@ -32,7 +32,13 @@ function startTimer(){
 }
 
 // start quiz - show start screen, show questions, start timer and present first question
-
+function startQuiz() {
+    document.getElementById("start-screen").classList.add("hide");
+    document.getElementById("questions").classList.remove("hide");
+    startTimer();
+    presentQuestion();
+  }
+  
 // WHEN I answer a question
 // THEN I am presented with another question
 // get questions list and display value of current question. use a loop to get choices. display text and add buttons, with event listeners for clicks. finally, append new elements so user can click/select answer with new button elements
