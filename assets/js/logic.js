@@ -9,10 +9,27 @@ startBtn.addEventListener("click", startQuiz);
 
 // THEN a timer starts and I am presented with a question
 // declare let for timer (60 secs), current question (set 0 for question 1) and interval (undefined for now)
+let timeRemaining = 60;
+let currentQuestion = 0;
+let timerInterval;
 // start and set interval
+function startTimer(){
+    timerInterval = setInterval(function(){
+        timeRemaining--;
 // check if time remaining is less than 0
+// fix as in test, clicking wrong answers could yield a negative integer that did not end the quiz at 0
+        if(timeRemaining < 0){
+            timeRemaining = 0;
+        }
 // display value of 'time' in html
+        document.querySelector("#time").textContent = timeRemaining;
 // if time remaining is 0, end the quiz
+        if(timeRemaining === 0){
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
 
 // start quiz - show start screen, show questions, start timer and present first question
 
