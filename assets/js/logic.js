@@ -105,7 +105,26 @@ function endQuiz() {
 
 // THEN I can save my initials and score
 // add save function, create initials variable from html, create highscores variable (will need to use localstorage and parse JSON data)
+// corrected to set score value at 0
+// need to correct score variable, has to show initials and scorevalue
 // add event listener to submit to save the score and stop submit default
+let scoreValue = 0;
+function saveScore() {
+    scoreValue = score;
+    let initials = document.querySelector("#initials").value;
+    let highscores = JSON.parse(localStorage.getItem("scores")) || [];
+    let score = {
+      initials: initials,
+      finalscore: scoreValue
+    };
+    highscores.push(score);
+    localStorage.setItem("scores", JSON.stringify(scores));
+  }
+  
+  document.querySelector("#submit").addEventListener("click", function(event) {
+    event.preventDefault();
+    saveScore();
+  });
 
 
 //questionsList  
