@@ -34,6 +34,7 @@ THEN I can save my initials and score
 10. Added end of quiz functions (timer and end-screen)
 11. Set feedback element to 1 sec increment
 12. Added function to save initials and score to localstorage
-13. Added function to clear highscores
-14. Set submit button to direct to highscores page
-15. Fixed bugs
+13. Set submit button to direct to highscores page
+14. Added functions to highscore page (get scores, put high to low, display)
+15. Added function to clear highscores
+16. Fixed bugs
