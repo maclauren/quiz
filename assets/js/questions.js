@@ -1,32 +1,32 @@
 let questions = [
     {
-        title: "What colour is the sky?",
-        choices: ["Red", "Yellow", "Black", "Blue"],
-        answer: "Blue"
+        title: "Which of the following is used to declare a constant type in Javascript?",
+        choices: ["var", "let", "const", "constant"],
+        answer: "const"
     },
     {
-        title: "What colour is grass?",
-        choices: ["Green", "Pink", "Orange", "White"],
-        answer: "Green"
+        title: "Which function is used to serialize an object into a JSON string?",
+        choices: ["stringify()", "parse()", "convert()", "import()"],
+        answer: "stringify()"
     },
     {
-        title: "What is the capital of England?",
-        choices: ["Edinburgh", "Cardiff", "London", "Dublin"],
-        answer: "London"
+        title: "Which of the following is not a Javascript framework?",
+        choices: ["Node", "Vue", "React", "jQuery"],
+        answer: "jQuery"
     },
     {
-        title: "How many legs do spiders have?",
-        choices: ["6", "8", "10", "12"],
-        answer: "8"
+        title: "Which of these will stop an interval timer?",
+        choices: ["clearInterval", "clearTimer", "stopInterval", "intervalOver"],
+        answer: "clearInterval"
     },
     {
-        title: "Which of these is not a type of fish?",
-        choices: ["Crow", "Cod", "Tuna", "Salmon"],
-        answer: "Crow"
+        title: "What does the operator ... do in Javascript?",
+        choices: ["Captures all values in an array", "Spreads iterables to individual elements", "Describe a datatype of undefined size", "This operator does not exist"],
+        answer: "Spreads iterables to individual elements"
     },
     {
-        title: "How many digits are on a human hand?",
-        choices: ["3", "4", "5", "6"],
-        answer: "5"
+        title: "How do you write a comment in Javascript?",
+        choices: ["/**/", "#", "$$", "//"],
+        answer: "//"
     },
 ]
