@@ -108,19 +108,20 @@ function endQuiz() {
 // corrected to set score value at 0
 // need to correct score variable, has to show initials and scorevalue
 // add event listener to submit to save the score and stop submit default
+// corrected so score was declared before called
+// corrected so highscores is set earlier and uses an empty array
 let scoreValue = 0;
+localStorage.setItem("highscores", "[]");
 function saveScore() {
-    scoreValue = score;
     let initials = document.querySelector("#initials").value;
-    let highscores = JSON.parse(localStorage.getItem("scores")) || [];
     let score = {
-      initials: initials,
-      finalscore: scoreValue
-    };
-    highscores.push(score);
-    localStorage.setItem("scores", JSON.stringify(scores));
+        initials: initials,
+        finalscore: scoreValue
+      };
+      let highscores = JSON.parse(localStorage.getItem("highscores"));
+      highscores.push(score);
+      localStorage.setItem("highscores", JSON.stringify(highscores));
   }
-  
   document.querySelector("#submit").addEventListener("click", function(event) {
     event.preventDefault();
     saveScore();
