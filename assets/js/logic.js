@@ -127,7 +127,7 @@ function saveScore() {
     let initials = document.querySelector("#initials").value;
     let score = {
         initials: initials,
-        finalscore: currentScore
+        highscores: currentScore
       };
 // retrieve current highscores values from localstorage and parse as JSON and add new highscore
       let highscores = JSON.parse(localStorage.getItem("highscores"));
