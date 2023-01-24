@@ -118,16 +118,18 @@ if(!localStorage.getItem("highscores")){
     localStorage.setItem("highscores", "[]");
 }
 // submit click
-document.querySelector("#submit").addEventListener("click", function(event) {
+document.querySelector("#submit").addEventListener("click", 
+function(event) {
     event.preventDefault();
     saveScore();
+    location.href = "highscores.html";
   });
 // function to saveScore that takes initials value submitted and creates an object containing initials and finalscore (value of 'scorevalue)
 function saveScore() {
     let initials = document.querySelector("#initials").value;
     let score = {
         initials: initials,
-        highscores: currentScore
+        score: currentScore
       };
 // retrieve current highscores values from localstorage and parse as JSON and add new highscore
       let highscores = JSON.parse(localStorage.getItem("highscores"));
