@@ -70,8 +70,9 @@ function selectAnswer(event) {
 // WHEN I answer a question incorrectly
     } else {
       displayFeedback("Incorrect!");
-// THEN time is subtracted from the clock
+// THEN time is subtracted from the clock and move on to next q
       timeRemaining -= 10;
+      currentQuestion++;
     }
 // WHEN all the questions are answered (or the timer reaches 0, written at line 21 in the timer function)
 // THEN the game is over
