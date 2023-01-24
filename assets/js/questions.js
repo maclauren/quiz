@@ -10,4 +10,3 @@ let questions = [
         answer: "Green"
     },
 ]
-

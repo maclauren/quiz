@@ -43,7 +43,7 @@ function startQuiz() {
 // THEN I am presented with another question
 // get questions list and display value of current question. use a loop to get choices. display text and add buttons, with event listeners for clicks. finally, append new elements so user can click/select answer with new button elements
 function presentQuestion() {
-    let question = questionsList[currentQuestion];
+    let question = questions[currentQuestion];
     document.querySelector("#question-title").textContent = question.title;
     let choices = document.querySelector("#choices");
     choices.innerHTML = "";
@@ -112,13 +112,16 @@ function endQuiz() {
 // corrected to use 'currentScore'
 // moved submit higher up
 
+// highscores empty array
+// let currentScore = 0;
+if(!localStorage.getItem("highscores")){
+    localStorage.setItem("highscores", "[]");
+}
 // submit click
 document.querySelector("#submit").addEventListener("click", function(event) {
     event.preventDefault();
     saveScore();
   });
-// highscores empty array
-localStorage.setItem("highscores", "[]");
 // function to saveScore that takes initials value submitted and creates an object containing initials and finalscore (value of 'scorevalue)
 function saveScore() {
     let initials = document.querySelector("#initials").value;
@@ -131,19 +134,4 @@ function saveScore() {
       highscores.push(score);
 // and then stringify highscores so back to text
       localStorage.setItem("highscores", JSON.stringify(highscores));
-  }
-
-
-//questionsList  
-let questionsList = [
-    {
-        title: "What colour is the sky?",
-        choices: ["Red", "Yellow", "Green", "Blue"],
-        answer: "Blue"
-    },
-    {
-        title: "What colour is grass?",
-        choices: ["Green", "Pink", "Orange", "White"],
-        answer: "Green"
-    },
-]
+}
