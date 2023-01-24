@@ -5,6 +5,7 @@ highscores.sort((a, b) => b.score - a.score);
 // put into list
 let ol = document.querySelector("#highscores");
 // add highscores as list items
+// attempted fix for undefined issue
 if (highscores !== null && highscores !== undefined) {
 highscores.forEach(score => {
     let li = document.createElement("li");
